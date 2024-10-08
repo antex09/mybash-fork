@@ -593,36 +593,36 @@ trim() {
 	var="${var%"${var##*[![:space:]]}"}" # remove trailing whitespace characters
 	echo -n "$var"
 }
-# GitHub Titus Additions
+# GitHub Simon Additions
 
 gcom() {
 	git add .
 	git commit -m "$1"
 }
-lazyg() {
-	git add .
-	git commit -m "$1"
-	git push
-}
+#lazyg() {
+#	git add .
+#	git commit -m "$1"
+#	git push
+#}
 
-function hb {
-    if [ $# -eq 0 ]; then
-        echo "No file path specified."
-        return
-    elif [ ! -f "$1" ]; then
-        echo "File path does not exist."
-        return
-    fi
-
-    uri="http://bin.christitus.com/documents"
-    response=$(curl -s -X POST -d @"$1" "$uri")
-    if [ $? -eq 0 ]; then
-        hasteKey=$(echo $response | jq -r '.key')
-        echo "http://bin.christitus.com/$hasteKey"
-    else
-        echo "Failed to upload the document."
-    fi
-}
+#function hb {
+#   if [ $# -eq 0 ]; then
+#        echo "No file path specified."
+#       return
+#   elif [ ! -f "$1" ]; then
+#        echo "File path does not exist."
+#        return
+#    fi
+#
+#    uri="http://bin.christitus.com/documents"
+#    response=$(curl -s -X POST -d @"$1" "$uri")
+#    if [ $? -eq 0 ]; then
+#        hasteKey=$(echo $response | jq -r '.key')
+#        echo "http://bin.christitus.com/$hasteKey"
+#    else
+#        echo "Failed to upload the document."
+#    fi
+#}
 
 #######################################################
 # Set the ultimate amazing command prompt
