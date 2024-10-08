@@ -204,8 +204,17 @@ alias checkcommand="type -t"
 alias openports='netstat -nape --inet'
 
 # Alias's for safe and forced reboots
-alias rebootsafe='sudo shutdown -r now'
-alias rebootforce='sudo shutdown -r -n now'
+#alias rebootsafe='sudo shutdown -r now'
+#alias rebootforce='sudo shutdown -r -n now'
+alias sr='sudo reboot'
+alias shd='sudo shutdown -h now'
+alias ssyh='sudo systemctl hibernate'
+alias sgc='sudo git clone --depth 1'
+alias grad='git remote add origin'
+
+# Alias's to Update and Upgrade the system
+alias sad='sudo apt update && sudo nala update'
+alias sag='sudo apt upgrade -y && sudo nala upgrade -y' 
 
 # Alias's to show disk space and space used in a folder
 alias diskspace="du -S | sort -n -r |more"
